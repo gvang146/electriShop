@@ -1,76 +1,81 @@
-import { AppBar, 
-         makeStyles,
-         Toolbar,
-         Typography,
-         Button } from '@material-ui/core'
-import {useState} from 'react'
+import {
+    AppBar,
+    makeStyles,
+    Toolbar,
+    Typography,
+    Button
+} from '@material-ui/core'
+import { useState } from 'react'
+import Login from "./accountpages/Login"
+import { withRouter, BrowserRouter as Router } from 'react-router-dom'
 
 const useStyles = makeStyles({
     header: {
         position: "static",
         color: 'secondary',
+        alignItems: 'flex-start'
     },
     title: {
-        flexGrow: 1
+        flexGrow: 1,
     },
     loginButton: {
         marginTop: 5,
         minWidth: 100,
-        color: "primary"
+        color: "primary",
     },
     loginButtonDisabled: {
-        backgroundColor: "rgba(29, 185, 84, 1) !important",
-        color: "white !important",
-        cursor: "not-allowed !important",
-        pointerEvents: "auto !important"
+        backgroundColor: "rgba(29, 185, 84, 1)",
+        color: "white",
+        cursor: "not-allowed ",
+        pointerEvents: "auto "
     },
 })
 
 
-function Header ({children, left, right}) {
+function Header({ children, left, right, history }) {
     const classes = useStyles();
-    const handleJoin = () => {
 
+    const handleLoginClick = () => {
+        history.push(<Login/>)
     }
     return (
-        <AppBar className={classes.header}>
+        <AppBar className={classes.header} >
             {left}
             <Toolbar >
                 <Typography className={classes.title}
-                            variant="h3"
-                            style={{ align: "center"}}>
-                        ElectriShop
+                    variant="h3"
+                >
+                    ElectriShop
                 </Typography>
-            {right}
-            <Button variant="inherit"
-                 size="small"
-                 color="primary"
-                 aria-label="login"
-                 id="login"
-                 classes={{
-                    root: classes.loginButton,
-                    disabled: classes.loginButtonDisabled
+                {right}
+                <Button variant="inherit"
+                    size="small"
+                    color="secondary"
+                    aria-label="login"
+                    id="login"
+                    classes={{
+                        root: classes.loginButton,
+                        disabled: classes.loginButtonDisabled
                     }}
-                    onClick={() => handleJoin()}>
-                        Login
+                    onClick={handleLoginClick()}>
+                    Login
 
-            </Button>
-            <Button variant="inherit"
-                 size="small"
-                 color="primary"
-                 aria-label="register"
-                 id="register"
-                 classes={{
-                    root: classes.loginButton,
-                    disabled: classes.loginButtonDisabled
+                </Button>
+                <Button variant="inherit"
+                    size="small"
+                    color="secondary"
+                    aria-label="register"
+                    id="register"
+                    classes={{
+                        root: classes.loginButton,
+                        disabled: classes.loginButtonDisabled
                     }}
-                    onClick={() => handleJoin()}>
-                        Sign-up
-
-            </Button>
+                    onClick={() => history.push("/Register")}>
+                    Sign-up
+                </Button>
             </Toolbar>
         </AppBar>
-        
+
     )
 }
 
