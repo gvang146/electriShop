@@ -10,7 +10,8 @@ import useState from 'react'
 
 const useStyles = makeStyles({
     root: {
-        marginTop: 2,
+        marginLeft: 100,
+        marginTop: 5,
     },
     textInput: {
         background: "white",
@@ -24,23 +25,7 @@ const useStyles = makeStyles({
     }
 })
 
-/*function SearchResult ({item, handleSelect}) {
-    const classes = useStyles();
-    return (
-        <ListItem
-            id="search-results"
-            alignItems="flex-start"
-            onClick={() => handleSelect(item)}
-            button
-            >
-            <listItemtext 
-                primary={item.name.map(item => {
-                    return item.name
-                }).toString()}
-                />
-            </ListItem>
-    )
-} */
+
 function NavBar({ createAlert }) {
     const classes = useStyles();
 

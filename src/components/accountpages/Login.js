@@ -14,16 +14,24 @@ const useStyles = makeStyles({
         background: 'primary'
     },
     button: {
-        marginTop: 1,
+        display: 'flex',
+        marginTop: 20,
         minWidth: 100,
-    }
+    },
+    containerLogin: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        margin: 200,
+
+    },
 })
 
 function Login({ history }) {
     const classes = useStyles();
 
     return (
-        <div className="containerLogin">
+        <div className={classes.containerLogin}>
             <Grid justifyContent="center"
                 wrap="wrap">
                 <Typography variant="h6">
@@ -44,7 +52,7 @@ function Login({ history }) {
 
             </Grid>
             <Grid>
-                <Link href="#" variant="6">
+                <Link href="/Register" variant="6">
                     Don't Have an account yet? Sign-Up
                 </Link>
 

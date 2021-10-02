@@ -5,6 +5,8 @@ import NavBar from './components/NavBar'
 import { Typography } from '@material-ui/core'
 import Filter from "./components/Filter"
 import Login from "./components/accountpages/Login"
+import Home from "./components/accountpages/Home"
+import Register from "./components/accountpages/Register"
 import {withRouther, BrowserRouter as Router, Route} from "react-router-dom"
 
 function App() {
@@ -12,11 +14,10 @@ function App() {
     <Router>
     <div className="container">
       <Header/>
-      <div className="top-section">
-        <NavBar />
       </div>
+      <Route path="/home" component={Home}/>
       <Route path="/login" component={Login}/>
-    </div>
+      <Route path="/Register" component={Register}/>
     </Router>
   );
 }

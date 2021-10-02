@@ -8,6 +8,8 @@ import {
 import { useState } from 'react'
 import Login from "./accountpages/Login"
 import { withRouter, BrowserRouter as Router, Link } from 'react-router-dom'
+import Home from "./accountpages/Home"
+import Register from "./accountpages/Register"
 
 const useStyles = makeStyles({
     header: {
@@ -17,6 +19,8 @@ const useStyles = makeStyles({
     },
     title: {
         flexGrow: 1,
+        textDecoration: 'inherit',
+        color: 'inherit',
     },
     loginButton: {
         marginTop: 5,
@@ -41,6 +45,8 @@ function Header({ children, left, right, history }) {
             <Toolbar >
                 <Typography className={classes.title}
                     variant="h3"
+                    component={Link}
+                    to="/home"
                 >
                     ElectriShop
                 </Typography>
@@ -64,11 +70,13 @@ function Header({ children, left, right, history }) {
                     color="secondary"
                     aria-label="register"
                     id="register"
+                    component={Link}
+                    to="/Register"
                     classes={{
                         root: classes.loginButton,
                         disabled: classes.loginButtonDisabled
                     }}
-                    onClick={() => history.push("/register")}>
+                >
                     Sign-up
                 </Button>
             </Toolbar>
