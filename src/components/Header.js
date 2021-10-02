@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core'
 import { useState } from 'react'
 import Login from "./accountpages/Login"
-import { withRouter, BrowserRouter as Router } from 'react-router-dom'
+import { withRouter, BrowserRouter as Router, Link } from 'react-router-dom'
 
 const useStyles = makeStyles({
     header: {
@@ -35,9 +35,6 @@ const useStyles = makeStyles({
 function Header({ children, left, right, history }) {
     const classes = useStyles();
 
-    const handleLoginClick = () => {
-        history.push(<Login/>)
-    }
     return (
         <AppBar className={classes.header} >
             {left}
@@ -49,6 +46,7 @@ function Header({ children, left, right, history }) {
                 </Typography>
                 {right}
                 <Button variant="inherit"
+                    component={Link}
                     size="small"
                     color="secondary"
                     aria-label="login"
@@ -57,7 +55,7 @@ function Header({ children, left, right, history }) {
                         root: classes.loginButton,
                         disabled: classes.loginButtonDisabled
                     }}
-                    onClick={handleLoginClick()}>
+                    to="/login">
                     Login
 
                 </Button>
@@ -70,7 +68,7 @@ function Header({ children, left, right, history }) {
                         root: classes.loginButton,
                         disabled: classes.loginButtonDisabled
                     }}
-                    onClick={() => history.push("/Register")}>
+                    onClick={() => history.push("/register")}>
                     Sign-up
                 </Button>
             </Toolbar>

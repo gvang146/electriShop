@@ -4,24 +4,20 @@ import Header from './components/Header'
 import NavBar from './components/NavBar'
 import { Typography } from '@material-ui/core'
 import Filter from "./components/Filter"
-import {withRouther, BrowserRouter as Router, Switch, history} from "react-router-dom"
+import Login from "./components/accountpages/Login"
+import {withRouther, BrowserRouter as Router, Route} from "react-router-dom"
 
 function App() {
   return (
+    <Router>
     <div className="container">
       <Header/>
       <div className="top-section">
         <NavBar />
-        <Typography variant="h6"
-          style={{ alignItems: 'center' }}>
-          Welcome To the Shop!
-        </Typography>
       </div>
-      <div className="body2">
-
-      </div>
-
+      <Route path="/login" component={Login}/>
     </div>
+    </Router>
   );
 }
 
