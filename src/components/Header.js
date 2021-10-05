@@ -23,9 +23,11 @@ const useStyles = makeStyles({
         color: 'inherit',
     },
     loginButton: {
+        display: "flex",
         marginTop: 5,
         minWidth: 100,
         color: "primary",
+        alignContent: "flex-end",
     },
     loginButtonDisabled: {
         backgroundColor: "rgba(29, 185, 84, 1)",
@@ -54,7 +56,7 @@ function Header({ children, left, right, history }) {
                 <Button variant="inherit"
                     component={Link}
                     size="small"
-                    color="secondary"
+                    color="primary"
                     aria-label="login"
                     id="login"
                     classes={{
@@ -67,7 +69,7 @@ function Header({ children, left, right, history }) {
                 </Button>
                 <Button variant="inherit"
                     size="small"
-                    color="secondary"
+                    color="primary"
                     aria-label="register"
                     id="register"
                     component={Link}
