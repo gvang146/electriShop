@@ -10,11 +10,12 @@ import Login from "./accountpages/Login"
 import { withRouter, BrowserRouter as Router, Link } from 'react-router-dom'
 import Dashbaord from "./accountpages/Dashboard"
 import Register from "./accountpages/Register"
+import theme from "../theme"
 
 const useStyles = makeStyles({
     header: {
         position: "static",
-        color: 'secondary',
+        color: "primary",
         alignItems: 'flex-start'
     },
     title: {
