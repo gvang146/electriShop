@@ -4,14 +4,11 @@ import {
     Typography,
     Button,
     Grid,
-    Link,
-    Toolbar,
     InputLabel,
     MenuItem,
     FormControl,
     Select,
 } from '@material-ui/core'
-import { findByLabelText } from '@testing-library/dom';
 import React from 'react'
 
 const useStyles = makeStyles({
@@ -41,7 +38,7 @@ const useStyles = makeStyles({
     }
 })
 
-function Register({ Register }) {
+function Register({ history }) {
     const classes = useStyles();
 
     const [state, setState] = React.useState("");
@@ -55,7 +52,7 @@ function Register({ Register }) {
             <Typography variant="h3">
                 Account Information
             </Typography>
-            <Grid xs={3}>
+            <Grid xs={8}>
                 <TextField placeholder="E-mail Address" />
 
             </Grid>

@@ -43,20 +43,20 @@ function Login({ history }) {
                 </Typography>
                 <TextField placeholder="Password" />
                 <Button variant="contained"
-                    color="primary"
+                    color="secondary"
                     className={classes.button}
                     type="submit"> Login </Button>
                 <Link href="#" variant="body2">
                     Forgot Password?
                 </Link>
+                <div>
+                    <Link href="/Register" variant="6">
+                        Don't Have an account yet? Sign-Up
+                    </Link>
 
+                </div>
             </Grid>
-            <Grid>
-                <Link href="/Register" variant="6">
-                    Don't Have an account yet? Sign-Up
-                </Link>
 
-            </Grid>
         </div>
     )
 

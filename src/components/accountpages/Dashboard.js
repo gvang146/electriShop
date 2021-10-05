@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     }
 })
 
-function Home () {
+function Dashboard () {
     const classes = useStyles();
     return (
         <div className={classes.root}>
@@ -18,4 +18,4 @@ function Home () {
     )
 }
 
-export default Home
+export default Dashboard

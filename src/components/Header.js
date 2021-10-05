@@ -8,7 +8,7 @@ import {
 import { useState } from 'react'
 import Login from "./accountpages/Login"
 import { withRouter, BrowserRouter as Router, Link } from 'react-router-dom'
-import Home from "./accountpages/Home"
+import Dashbaord from "./accountpages/Dashboard"
 import Register from "./accountpages/Register"
 
 const useStyles = makeStyles({
@@ -48,7 +48,7 @@ function Header({ children, left, right, history }) {
                 <Typography className={classes.title}
                     variant="h3"
                     component={Link}
-                    to="/home"
+                    to="/dashboard"
                 >
                     ElectriShop
                 </Typography>
