@@ -1,8 +1,11 @@
 import {
     ShoppingCart
 } from "@material-ui/icons"
+import React from "react";
 
 const ShoppingCart = () => {
-    <ShoppingCart
-        ></ShoppingCart>
+
+        return (
+            <ShoppingCart></ShoppingCart>
+        )
 }

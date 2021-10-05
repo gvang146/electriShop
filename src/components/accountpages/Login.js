@@ -5,9 +5,11 @@ import {
     Button,
     Grid,
     Link,
-    Toolbar
+    FormControlLabel,
+    Checkbox,
 } from '@material-ui/core'
 import useState from 'react'
+
 
 const useStyles = makeStyles({
     root: {
@@ -42,10 +44,12 @@ function Login({ history }) {
                     Password:
                 </Typography>
                 <TextField placeholder="Password" />
+                <div>
                 <Button variant="contained"
                     color="secondary"
                     className={classes.button}
                     type="submit"> Login </Button>
+                <FormControlLabel control={<Checkbox defaultChecked />} label="Remember Me"/>                </div>
                 <Link href="#" variant="body2">
                     Forgot Password?
                 </Link>
@@ -53,7 +57,6 @@ function Login({ history }) {
                     <Link href="/Register" variant="6">
                         Don't Have an account yet? Sign-Up
                     </Link>
-
                 </div>
             </Grid>
 

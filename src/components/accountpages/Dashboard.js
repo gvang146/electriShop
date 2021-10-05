@@ -14,7 +14,6 @@ function Dashboard () {
         <div className={classes.root}>
             <NavBar />
         </div>
-        
     )
 }
 
