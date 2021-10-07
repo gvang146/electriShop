@@ -1,5 +1,7 @@
 import NavBar from "../NavBar"
-import { makeStyles } from "@material-ui/core"
+import { makeStyles} from "@material-ui/core"
+import ScrollableTabs from "../tabs/ScrollableTab";
+
 
 
 const useStyles = makeStyles({
@@ -12,9 +14,11 @@ function Dashboard () {
     const classes = useStyles();
     return (
         <div className={classes.root}>
+            <div className="tabs">
+            <ScrollableTabs />
+            </div>
             <NavBar />
         </div>
-        
     )
 }
 
