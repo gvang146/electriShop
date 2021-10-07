@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header'
 import NavBar from './components/NavBar'
 import { Typography } from '@material-ui/core'
-import Filter from "./components/Filter"
 import Login from "./components/accountpages/Login"
 import Dashboard from "./components/accountpages/Dashboard"
 import Register from "./components/accountpages/Register"
