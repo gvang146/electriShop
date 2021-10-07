@@ -41,6 +41,12 @@ const useStyles = makeStyles({
         marginBottom: 10,
         marginTop: -160,
     },
+    textField: {
+        margin: 10,
+    },
+    select: {
+        margin: 10,
+    },
 })
 
 function Register({ history }) {
@@ -59,25 +65,29 @@ function Register({ history }) {
                     Account Information
                 </Typography>
             </div>
+            <Grid>
+                <TextField className={classes.textField} placeholder="First Name"/>
+                <TextField className={classes.textField} placeholder="Last Name"/>
+            </Grid>
             <Grid xs={3}>
-                <TextField placeholder="E-mail Address" />
+                <TextField className={classes.textField} placeholder="E-mail Address" />
 
             </Grid>
             <Grid sx={3}>
-                <TextField placeholder="Password" />
-                <TextField placeholder="Confirm Password" />
+                <TextField className={classes.textField} placeholder="Password" />
+                <TextField className={classes.textField} placeholder="Confirm Password" />
 
             </Grid>
             <Grid sx={3}>
-
-                <TextField placeholder="Address" />
-                <TextField placeholder="City" />
-
+                <TextField className={classes.textField} placeholder="Address" />
+                <TextField className={classes.textField} placeholder="City" />
             </Grid>
+            
             <div className={classes.state}>
                 <FormControl sx={{ m: 1, minWidth: 80 }}>
                     <InputLabel id="state-select"></InputLabel>
-                    <Select
+                    <Select 
+                        className={classes.select}
                         labelId="state-selector-label"
                         id="state-selector"
                         value={state}
@@ -139,7 +149,7 @@ function Register({ history }) {
                     </Select>
                 </FormControl>
             </div>
-            <TextField placeholder="Zip Code" />
+            <TextField className={classes.textField} placeholder="Zip Code" />
             <div >
                 <Button className={classes.button}
                     id="submitBtn"
