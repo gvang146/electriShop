@@ -6,6 +6,7 @@ import {
     CardContent,
     CardHeader,
     Typography,
+    CardMedia,
 } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -13,6 +14,14 @@ const useStyles = makeStyles({
         flexGrow: 1,
         color: 'primary',
     },
+    card: {
+        flexGrow: 1,
+        borderRadius: 10,
+    },
+    media: {
+        height: 0,
+        paddingTop: "56.25%",
+    }
 })
 
 export default function Gpucards() {
@@ -39,6 +48,10 @@ export default function Gpucards() {
                     {data.map(elem=> (
                         <Grid item sx={12} sm={6} md={3} key={data.indexOf(elem)}>
                             <Card>
+                            <CardMedia 
+                                    className={classes.media}
+                                    image={`${elem.image}`}
+                                    />
                                 <CardHeader
                                     title={`${elem.title}`}
                                     subheader={`Price: ${elem.Price}`}
