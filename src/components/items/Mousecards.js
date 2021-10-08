@@ -6,6 +6,7 @@ import {
     CardContent,
     CardHeader,
     Typography,
+    CardMedia
 } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -43,6 +44,7 @@ export default function Gpucards() {
                                     title={`${elem.title}`}
                                     subheader={`Price: ${elem.Price}`}
                             />
+                            
                             <CardContent>
                                 <Typography vairant="h5" gutterBottom>
                                     Stock Available 
