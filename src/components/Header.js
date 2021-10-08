@@ -6,15 +6,13 @@ import {
     Button
 } from '@material-ui/core'
 import { useState } from 'react'
-import Login from "./accountpages/Login"
 import { withRouter, BrowserRouter as Router, Link } from 'react-router-dom'
-import Dashbaord from "./accountpages/Dashboard"
-import Register from "./accountpages/Register"
 import theme from "../theme"
+import NavBar from "./NavBar";
 
 const useStyles = makeStyles({
     header: {
-        position: "static",
+        position: "relative",
         color: "primary",
         alignItems: 'flex-start'
     },
@@ -54,6 +52,7 @@ function Header({ children, left, right, history }) {
                     ElectriShop
                 </Typography>
                 {right}
+                <NavBar />
                 <Button variant="inherit"
                     component={Link}
                     size="small"
@@ -66,7 +65,6 @@ function Header({ children, left, right, history }) {
                     }}
                     to="/login">
                     Login
-
                 </Button>
                 <Button variant="inherit"
                     size="small"

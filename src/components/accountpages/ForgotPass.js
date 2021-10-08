@@ -7,21 +7,22 @@ import { Typography,
 
 const useStyles = makeStyles({
     root: {
-        display: "flex",
-        flexDirection: "column",
-        alignContent: "center",
-        alignItems:"center",
-        margin: 100,
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        margin: 200,
         },
     textfield: {
-        margin: 10,
+        margin: 20,
     },
     button: {
         display: "flex",
         marginTop: 5,
         minWidth: 100,
         color: "primary",
-        alignContent: "flex-end",
+        alignContents: "flex-start",
     },
     title: {
         justifyContent: "center",

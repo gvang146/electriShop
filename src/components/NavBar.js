@@ -1,22 +1,19 @@
 import {
-    List,
-    ListItem,
-    ListItemText,
     makeStyles,
     TextField,
-    Tooltip
+    Tooltip,
 } from "@material-ui/core"
+
 import useState from 'react'
 
 const useStyles = makeStyles({
     root: {
         marginLeft: 100,
-        marginTop: 5,
     },
     textInput: {
         background: "white",
         color: "black",
-        fontSize: "x-large",
+        fontSize: "small",
         fontWeight: "bold"
     },
     img: {
@@ -41,7 +38,7 @@ function NavBar({ createAlert }) {
             <Tooltip title={searchTip}>
                 <TextField id="search-bar"
                     variant="outlined"
-                    style={{ width: "80%" }}
+                    style={{ maxWidth: 'auto' }}
                     type="search"
                     InputLabelProps={{
                         classes: {

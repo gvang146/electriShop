@@ -16,7 +16,6 @@ function Dashboard () {
             <div className="tabs">
             <ScrollableTabs />
             </div>
-            <NavBar />
         </div>
     )
 }
