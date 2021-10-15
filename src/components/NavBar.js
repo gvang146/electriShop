@@ -38,7 +38,7 @@ function NavBar({ createAlert }) {
             <Tooltip title={searchTip}>
                 <TextField id="search-bar"
                     variant="outlined"
-                    style={{ maxWidth: 'auto' }}
+                    style={{ minWidth: "100%" }}
                     type="search"
                     InputLabelProps={{
                         classes: {
