@@ -12,7 +12,7 @@ import NavBar from "./NavBar";
 
 const useStyles = makeStyles({
     header: {
-        position: "relative",
+        position: "static",
         color: "primary",
         alignItems: 'flex-start'
     },
@@ -20,13 +20,13 @@ const useStyles = makeStyles({
         flexGrow: 1,
         textDecoration: 'inherit',
         color: 'inherit',
+        minWidth: "100%"
     },
     loginButton: {
         display: "flex",
-        marginTop: 5,
+        margin: 5,
         minWidth: 100,
-        color: "primary",
-        alignContent: "flex-end",
+        color: "secondary",
     },
     loginButtonDisabled: {
         backgroundColor: "rgba(29, 185, 84, 1)",
@@ -34,6 +34,14 @@ const useStyles = makeStyles({
         cursor: "not-allowed ",
         pointerEvents: "auto "
     },
+    searchBar: {
+        minWidth: "90%",
+    },
+    buttonDiv: {
+        display: "flex",
+        minWidth: "20%",
+        flexDirection: "row",
+    }
 })
 
 
@@ -52,11 +60,13 @@ function Header({ children, left, right, history }) {
                     ElectriShop
                 </Typography>
                 {right}
+                <div className={classes.searchBar}>
                 <NavBar />
-                <Button variant="inherit"
+                </div>
+                <div className={classes.buttonDiv}>
+                <Button variant="contained"
                     component={Link}
                     size="small"
-                    color="primary"
                     aria-label="login"
                     id="login"
                     classes={{
@@ -66,9 +76,8 @@ function Header({ children, left, right, history }) {
                     to="/login">
                     Login
                 </Button>
-                <Button variant="inherit"
+                <Button variant="contained"
                     size="small"
-                    color="primary"
                     aria-label="register"
                     id="register"
                     component={Link}
@@ -80,6 +89,7 @@ function Header({ children, left, right, history }) {
                 >
                     Sign-up
                 </Button>
+                </div>
             </Toolbar>
         </AppBar>
 
