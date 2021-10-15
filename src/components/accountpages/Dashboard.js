@@ -11,11 +11,11 @@ const useStyles = makeStyles({
         flexDirection: "row",
     },
     scrollable: {
-        maxWidth: "80%",
+        minWidth: "90%",
     },
     cart: {
         padding: 5,
-        maxWidth: "20%",
+        minWidth: "5%",
     }
 
 })
