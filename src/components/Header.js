@@ -9,6 +9,8 @@ import { useState } from 'react'
 import { withRouter, BrowserRouter as Router, Link } from 'react-router-dom'
 import theme from "../theme"
 import NavBar from "./NavBar";
+import Cart from "./ShoppingCart/Cart";
+
 
 const useStyles = makeStyles({
     header: {
@@ -39,8 +41,12 @@ const useStyles = makeStyles({
     },
     buttonDiv: {
         display: "flex",
-        minWidth: "20%",
+        minWidth: "30%",
         flexDirection: "row",
+    },
+    cart: {
+        display: "flex",
+        minWidth: "5%",
     }
 })
 
@@ -89,6 +95,9 @@ function Header({ children, left, right, history }) {
                 >
                     Sign-up
                 </Button>
+                </div>
+                <div className={classes.cart}>
+                    <Cart />
                 </div>
             </Toolbar>
         </AppBar>

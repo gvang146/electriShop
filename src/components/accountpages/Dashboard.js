@@ -11,12 +11,8 @@ const useStyles = makeStyles({
         flexDirection: "row",
     },
     scrollable: {
-        minWidth: "95%",
+        minWidth: "100%",
     },
-    cart: {
-        padding: 5,
-        minWidth: "5%",
-    }
 
 })
 
@@ -26,9 +22,6 @@ function Dashboard() {
         <div className={classes.root}>
             <div className={classes.scrollable}>
                 <ScrollableTabs />
-            </div>
-            <div className={classes.cart}>
-                <Cart />
             </div>
 
         </div>
