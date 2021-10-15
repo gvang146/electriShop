@@ -1,7 +1,7 @@
 import NavBar from "../NavBar"
 import { makeStyles } from "@material-ui/core"
 import ScrollableTabs from "../tabs/ScrollableTab";
-import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import Cart from "../ShoppingCart/Cart";
 
 
 const useStyles = makeStyles({
@@ -28,7 +28,7 @@ function Dashboard() {
                 <ScrollableTabs />
             </div>
             <div className={classes.cart}>
-                <ShoppingCart />
+                <Cart />
             </div>
 
         </div>

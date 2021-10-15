@@ -15,7 +15,8 @@ export default function listItems({ anchor }) {
         <List>
             {["Item 1", "Item 2", "Item 3", "Item 4"].map((text, index) => (
                 <ListItem key={text} >
-                    <ListItemText primary={text} />
+                    <ListItemText primary={text}
+                                  style={{padding: 50}} />
                     <ButtonGroup>
                         <Button>+</Button>
                         <Button>-</Button>
