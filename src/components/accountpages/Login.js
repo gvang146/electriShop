@@ -42,9 +42,9 @@ const useStyles = makeStyles({
     },
 })
 
-function Login({ history }) {
+function Login({ history, users }) {
     const classes = useStyles();
-
+    
 
     return (
         <div className={classes.containerLogin}>
@@ -70,7 +70,8 @@ function Login({ history }) {
                         <Button variant="contained"
                             color="secondary"
                             className={classes.button}
-                            type="submit"> Login </Button>
+                            type="submit"
+                            onClick={handleLogin}> Login </Button>
                         <FormControlLabel control={<Checkbox defaultChecked />} label="Remember Me" />  
                     </div>
                     <Link href="/forgotPass" variant="body2">

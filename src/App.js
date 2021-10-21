@@ -10,6 +10,13 @@ import { withRouther, BrowserRouter as Router, Route, Switch } from "react-route
 import { useState, useEffect } from 'react';
 
 function App() {
+  users: [
+    {id: 1},
+    {email: 'gvang146@gmail.com'},
+    {pass: 'pa55'},
+    {lastname: 'Vang'},
+    {firstname: 'Ger'},
+  ]
   /*const [user, setUser] = useState(false);
   useEffect(() => {
     getUser();
@@ -64,7 +71,7 @@ function deleteUser() {
       </div>
       <Switch>
         <Route path="/dashboard" component={Dashboard} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" component={Login(user)} />
         <Route path="/register" component={Register} />
         <Route path="/forgotPass" component={ForgotPass} />
       </Switch>

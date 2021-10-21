@@ -23,19 +23,17 @@ const useStyles = makeStyles({
 export default function UserBtn() {
     const classes = useStyles();
     const [state, setState] = React.useState(false);
-
     const handleToggle = (event) => {
-        setState(true);
+        setState({ state: event.currentTarget});
     }
     const handleClose = () => {
         setState(false);
     }
-
     return (
         <div className={classes.root}>
             <IconButton 
                 onClick={() => setState(true)}
-                aria-owns={state ? "profile-menu" : null}
+                aria-owns={state ? "profile-menu" : false}
                 aria-haspopup="true">
                 <Avatar>G</Avatar>
             </IconButton>

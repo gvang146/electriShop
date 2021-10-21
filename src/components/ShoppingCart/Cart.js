@@ -47,7 +47,6 @@ export default function Cart() {
                 >
                     <div className={classes.cartTitle}>
                         <Typography variant="h5"> Cart </Typography>
-
                     </div>
                     <Divider />
                     <ListItems />
