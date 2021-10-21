@@ -1,82 +1,56 @@
+import { PropTypes } from "prop-types";
 import {
-    Box,
-    Avatar,
+    Button,
+    Paper,
     Menu,
     MenuItem,
-    ListItemIcon,
-    Divider,
+    MenuList,
+    makeStyles,
     IconButton,
-    Tooltip,
-    makeStyles
+    Avatar
 } from "@material-ui/core";
-import {
-    Settings
-} from "@material-ui/icons";
-import { typography } from "@mui/system";
-import React from "react";
+import React from 'react';
 
 const useStyles = makeStyles({
-    boxContainer: {
+    root: {
         display: "flex",
-        alignItems: "center",
-        textAlign: "center",
     },
-    typography: {
-        minWidth: 100,
-    },
-    icon: {
-        ml: 2,
-    },
-    avatar: {
-        width: 32,
-        height: 32,
+    paper: {
+        marginRight: 2,
     },
 })
 
-export default function AccountMenu() {
+export default function UserBtn() {
     const classes = useStyles();
     const [state, setState] = React.useState(false);
-    const open = Boolean(state);
-    const handleClick = (event) => {
-        setState(event.currentTarget);
-    };
+
+    const handleToggle = (event) => {
+        setState(true);
+    }
     const handleClose = () => {
         setState(false);
     }
+
     return (
-        <React.Fragment>
-            <Box className={classes.boxContainer}>
-                <Tooltip title="Account Settings">
-                    <IconButton onClick={handleClick}
-                        size="small"
-                        sx={{ ml: 2 }}>
-                        <Avatar className={classes.avatar}>G</Avatar>
-                    </IconButton>
-                </Tooltip>
-            </Box>
-            <Menu
-                anchorEl={state}
-                open={open}
-                onClose={handleClose}
-                onClick={handleClose}
-            >
-                <MenuItem>
-                    <Avatar /> Profile
-                </MenuItem>
-                <MenuItem>
-                    <Avatar /> My Account
-                </MenuItem>
-                <Divider />
-                <MenuItem>
-                    <ListItemIcon>
-                        <Settings fontSize="small" />
-                    </ListItemIcon>
-                    Settings
-                </MenuItem>
-                <MenuItem>
-                    Logout
-                </MenuItem>
-            </Menu>
-        </React.Fragment>
+        <div className={classes.root}>
+            <IconButton 
+                onClick={() => setState(true)}
+                aria-owns={state ? "profile-menu" : null}
+                aria-haspopup="true">
+                <Avatar>G</Avatar>
+            </IconButton>
+            <Paper className={classes.paper}>
+                <Menu
+                    id="profile-menu"
+                    anchorEl={state}
+                    open={Boolean(state)}
+                    onClose={handleClose}
+                    >
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>Settings</MenuItem>
+                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </Menu>
+            </Paper>
+        </div>
     )
 }

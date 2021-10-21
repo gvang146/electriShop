@@ -11,6 +11,7 @@ import theme from "../theme"
 import NavBar from "./NavBar";
 import Cart from "./ShoppingCart/Cart";
 import LogRegBtn from "./topright/LogRegBtns";
+import UserBtn from './topright/UserBtn';
 
 
 const useStyles = makeStyles({
@@ -57,7 +58,7 @@ function Header({ children, left, right, history }) {
                 <NavBar />
                 </div>
                 <div className={classes.buttonDiv}>
-                <LogRegBtn />
+                <UserBtn />
                 </div>
                 <div className={classes.cart}>
                     <Cart />
